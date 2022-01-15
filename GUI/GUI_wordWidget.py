@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from PyQt4 import QtGui, QtCore
+from PyQt5 import QtCore, QtWidgets
 from Ui_wordWidget import Ui_wordWidget
 
-class GUI_wordWidget(QtGui.QMainWindow, Ui_wordWidget):
+class GUI_wordWidget(QtWidgets.QMainWindow, Ui_wordWidget):
     wordRadioSignal = QtCore.pyqtSignal(int)
     def __init__(self):
-        QtGui.QWidget.__init__(self)
+        QtWidgets.QWidget.__init__(self)
         self.setupUi(self)
         self.name = None
         self.radioButton.toggled.connect(lambda: self.handle_areaRadio(self.radioButton))

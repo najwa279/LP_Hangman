@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from PyQt4 import QtGui
+from PyQt5 import QtWidgets
 import sys
 import os
 sys.path.append(os.path.join(sys.path[0],'GUI'))
@@ -12,9 +12,9 @@ filelist = [ f for f in os.listdir(".") if f.endswith(".pyc") ]
 for f in filelist:
     os.remove(f)
 
-class LP_Hangman(QtGui.QApplication):
+class LP_Hangman(QtWidgets.QApplication):
     def __init__(self,argv):
-        QtGui.QWidget.__init__(self,argv)
+        QtWidgets.QWidget.__init__(self,argv)
         self.controller = LP_Hangman_Controller.LP_Hangman_Controller(argv)
 
 if __name__ == '__main__':

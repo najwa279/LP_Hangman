@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from PyQt4.QtGui import *
-from PyQt4.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
 import sys
 
 class GUI_wordHints(QMainWindow):
@@ -20,9 +21,9 @@ class GUI_wordHints(QMainWindow):
         self.resize(200, 600)
         self.settings = QSettings("GUI_wordHints", "LP_Hangman")
         if not self.settings.value("GUI_wordHintsgeometry") == None:
-            self.restoreGeometry(self.settings.value("GUI_wordHintsgeometry").toByteArray())
+            self.restoreGeometry(self.settings.value("GUI_wordHintsgeometry"))
         if not self.settings.value("GUI_wordHintswindowState") == None:
-            self.restoreState(self.settings.value("GUI_wordHintswindowState").toByteArray())
+            self.restoreState(self.settings.value("GUI_wordHintswindowState"))
 
     def closeEvent(self, event):
         self.settings.setValue("GUI_wordHintsgeometry", self.saveGeometry())

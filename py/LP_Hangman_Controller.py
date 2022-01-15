@@ -3,7 +3,7 @@
 import sys, os
 
 import LP_Data
-from PyQt4 import QtGui, QtCore
+from PyQt5 import QtWidgets
 from GUI_mainView import GUI_mainView
 from oneGram_Finder import *
 from NGram_Finder import *
@@ -74,7 +74,7 @@ class LP_Hangman_Controller(object):
                              + str(self.mainView.ngram_counts)
                              + ' with hints '
                              +  str(ngram_word_hints) ) # MAGIC_STRING
-            QtGui.qApp.processEvents()
+            QtWidgets.qApp.processEvents()
 
             self.NGram_Finder.ngram = self.mainView.ngram_counts
             self.NGram_Finder.word_hints = ngram_word_hints

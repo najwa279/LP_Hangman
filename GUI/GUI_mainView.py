@@ -16,16 +16,16 @@ else:
 # except ImportError:
 #     QString = str
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtGui, QtWidgets
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
     _fromUtf8 = lambda s: s
 
-class GUI_mainView(QtGui.QMainWindow, Ui_mainView):
+class GUI_mainView(QtWidgets.QMainWindow, Ui_mainView):
     #closing = QtCore.pyqtSignal()# custom close signal to send to controller
     def __init__(self):
-        QtGui.QWidget.__init__(self)
+        QtWidgets.QWidget.__init__(self)
         self.setupUi(self)
         # map of word widgets, keyed by their place in the senence
         self.wordWidgets = {}
@@ -34,7 +34,7 @@ class GUI_mainView(QtGui.QMainWindow, Ui_mainView):
         # GUI layout varibale
         self.maxWordsPerLine = 12       #MAGIC_NUMBER
         # varibale to group the wordWidget radiobuttons
-        self.wordRadioButons = QtGui.QButtonGroup()
+        self.wordRadioButons = QtWidgets.QButtonGroup()
         # what is N
         self.NgramN = 4                 #MAGIC_NUMBER
         self.activeWord = None

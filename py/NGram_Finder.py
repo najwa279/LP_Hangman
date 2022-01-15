@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import os
 import os.path
-from PyQt4 import QtCore
+from PyQt5 import QtCore
 from ng_file_map import *
 
 class NGram_Finder(QtCore.QObject):
